@@ -2,12 +2,14 @@
     <div>
         <div class="bg-gray-100">
             <div class="site-wrapper">
-            <MainNavbar />
-            <div>
-                <slot />
+                <MainNavbar />
+                <div>
+                    <slot />
+                </div>
+                <div>
+                    <MainFooter />
+                </div>
             </div>
-            <div>Footer</div>
-        </div>
         </div>
         
     </div>

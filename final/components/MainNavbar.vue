@@ -1,3 +1,6 @@
+<script setup >
+  const isOpen = ref(false)
+</script>
 <template>
     <div>
         <!-- Navbar -->
@@ -67,7 +70,7 @@
             <button
               class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
             >
-              Primary
+              Perks
             </button>
           </div>
 
@@ -75,7 +78,7 @@
             <button
               class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
             >
-              Primary
+              Signin
             </button>
           </div>
         </div>
@@ -95,12 +98,12 @@
              <a
               class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
-              >Home</a
+              >Menu</a
             >
             <a
               class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
-              >Shop</a
+              >Location</a
             >
           </div>
           
@@ -132,12 +135,12 @@
             <a
               class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
-              >Link</a
+              >NPerks</a
             >
             <a
               class="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
               href="#"
-              >Link</a
+              >Delivery</a
             >
             
             </div>
