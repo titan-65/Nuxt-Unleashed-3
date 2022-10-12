@@ -27,7 +27,7 @@ definePageMeta({
       <div class="mx-52">
         <div class="flex justify-between items-center">
           <div class="item">
-            <nuxt-img src=""/>
+            <nuxt-img src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGNvZmZlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"/>
             <h1>
               Earn points any way you want to payibmalienware1
             </h1>
