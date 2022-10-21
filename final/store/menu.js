@@ -1,6 +1,14 @@
 import { defineStore } from 'pinia'
 
 export const useMenuStore = defineStore('menu', () => {
+    
+    /* -------------------------------------------------------------------------- */
+    /*                                    State                                   */
+    /* -------------------------------------------------------------------------- */
+    const loading = ref(false)
+    const data = ref([])
+    const dataLimit = ref(null)
+    const [pages] = ref(Math.round(data.length / dataLimit))
     const beverages = ref(null)
     const drinksOnMe = ref(false)
     const teaMenuItems = [
@@ -81,16 +89,34 @@ export const useMenuStore = defineStore('menu', () => {
             ]
       },
     ]
-
+    /* --------------------------------- Getters -------------------------------- */
+    
     const getBeverages = computed(() => {
         return beverages.value
     })
+
+    const getTeaItems = computed(() => teaMenuItems.value)
+    const getIcedCoffee = computed(() => icedCoffeeItems.value)
+    const getFrozenDrinks = computed(() => frozenDrinks.value)
+
+    /* --------------------------------- Actions -------------------------------- */
+    const loadingItems = () => {
+        loading.value = true
+        beverages.value = []
+        teaMenuItems.value = []
+
+    }
+   
+    const addItems = () => {
+        
+    }
 
     return {
         beverages,
         getBeverages,
         teaMenuItems,
         icedCoffeeItems,
-        frozenDrinks
+        frozenDrinks,
+        loadingItems
     }
 })

@@ -25,7 +25,7 @@ console.log("Client: ",beverageItem)
 
 const { data: beverageItemServer } = await useAsyncData('beverages', () => $fetch('/api/supabaseItems'))
 
-store.beverages = beverageItemServer
+// store.beverages = beverageItemServer
 
 
 getLocation()
