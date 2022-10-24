@@ -1,8 +1,17 @@
 <script setup>
+const nuxtApp = useNuxtApp()
+
 import { useMenuStore } from './store/menu'
+import { usePointStore } from './store/points'
+
+
+
 
 const { location, fetchLocation, errorString, checkLocation, getLocation } = useLocation()
 const { beverages, getBeverages, frozenDrinks, teaMenuItems, icedCoffeeItems } = useMenuStore()
+const { calculatePoints } = usePointStore()
+
+
 
 // console.log(store.frozenDrinks)
 
@@ -25,12 +34,15 @@ console.log("Client: ",beverageItem)
 
 const { data: beverageItemServer } = await useAsyncData('beverages', () => $fetch('/api/supabaseItems'))
 
-// store.beverages = beverageItemServer
+// beverages.push(beverageItemServer)
 
 
 getLocation()
 
-onMounted(() => {})
+onMounted(() => {
+  calculatePoints()
+ })
+
 </script>
 <template>
   <div>

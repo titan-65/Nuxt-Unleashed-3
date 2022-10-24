@@ -8,8 +8,8 @@ export const useMenuStore = defineStore('menu', () => {
     const loading = ref(false)
     const data = ref([])
     const dataLimit = ref(null)
-    const [pages] = ref(Math.round(data.length / dataLimit))
-    const beverages = ref(null)
+    // const [pages] = ref(Math.round(data.length / dataLimit))
+    const beverages = ref([])
     const drinksOnMe = ref(false)
     const teaMenuItems = [
       {
@@ -48,7 +48,7 @@ export const useMenuStore = defineStore('menu', () => {
             }
       },
     ]
-    const frozenDrinks = [
+    const frozenDrinks = ref([
         {
             id: '6029f20f-44f6-4112-a134-17ffdaeb6f36',
             title: 'Frozen Chocolate',
@@ -88,7 +88,7 @@ export const useMenuStore = defineStore('menu', () => {
                 'Water; Blue Raspberry Flavored Coolatta Concentrate: Water, High Fructose Corn Syrup, Sugar, Citric Acid, Natural and Artificial Flavors, Xanthan Gum, Sodium Benzoate and Potassium Sorbate (Preservatives), Blue 1; Liquid Cane Sugar: Pure Cane Sugar, Water, Potassium Sorbate (Preservative).'
             ]
       },
-    ]
+    ])
     /* --------------------------------- Getters -------------------------------- */
     
     const getBeverages = computed(() => {
@@ -114,6 +114,9 @@ export const useMenuStore = defineStore('menu', () => {
     return {
         beverages,
         getBeverages,
+        getTeaItems,
+        getIcedCoffee,
+        getFrozenDrinks,
         teaMenuItems,
         icedCoffeeItems,
         frozenDrinks,
