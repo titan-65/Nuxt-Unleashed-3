@@ -1,6 +1,7 @@
 <script setup>
 definePageMeta({
   title: 'Nuxtin',
+  middleware: ["user"]
 })
 </script>
 <template>

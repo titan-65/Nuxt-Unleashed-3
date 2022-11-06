@@ -41,6 +41,7 @@ export const usePointStore = defineStore('points', () => {
 
     return {
         calculatePoints,
+        earnedRewardPoint
 
     }
 })

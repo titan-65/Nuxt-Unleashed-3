@@ -11,10 +11,12 @@
     "@nuxt/image-edge": "^1.0.0-27719579.87dcdf2",
     "@nuxtjs/supabase": "^0.1.27",
     "@nuxtjs/tailwindcss": "^5.3.3",
-    "nuxt": "3.0.0-rc.11"
+    "nuxt": "^3.0.0-rc.12"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.3",
+    "cookie-session": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
     "pinia": "^2.0.23"
   }
 }

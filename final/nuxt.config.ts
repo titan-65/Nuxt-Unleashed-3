@@ -26,4 +26,7 @@ export default defineNuxtConfig({
       supabaseUrl: process.env.NUXT_SUPABASE_URL,
     },
   },
+  routeRules: {
+    cors: true
+  }
 })
