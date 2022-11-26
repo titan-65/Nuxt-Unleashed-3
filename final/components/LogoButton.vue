@@ -1,0 +1,13 @@
+<script setup>
+const client = useSupabaseClient()
+</script>
+<template>
+  <main>
+    <button
+      class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+      @click="client.auth.signOut()"
+    >
+      Logout
+    </button>
+  </main>
+</template>

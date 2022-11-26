@@ -5,7 +5,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
     const { addTrackUser, addNuxtinUser } = useUserStore()
     if (user) {
         addTrackUser(to.path)
-        addNuxtinUser(user)
+        addNuxtinUser(user.email)
     }
     
 })

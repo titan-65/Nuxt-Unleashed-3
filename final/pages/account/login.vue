@@ -1,5 +1,5 @@
 <script setup>
-import { useUserStore } from '~/store/user';
+import { useUserStore } from '~/store/user'
 const client = useSupabaseClient()
 const router = useRouter()
 
@@ -7,39 +7,25 @@ const email = ref('')
 const password = ref('')
 const loading = ref(false)
 
-
 const { nuxtinUser, getTrackUser, addNuxtinUser } = useUserStore()
 
 const handleSubmit = async () => {
+  try {
+    const { user, error } = await client.auth.signInWithPassword({
+      email: email.value,
+      password: password.value,
+    })
 
-    try {
-        const { data, error } = await client.auth.signInWithPassword({
-            email: email.value,
-            password: password.value
-        })
-
-        if (error) {
-            new Error('Something went wrong with signup')
-            return
-       
-        }
-        console.log(data)
-    } catch (error) {
-            console.log(error)
-        }
-
-    // router.push('/')
-
-
+    if (error) {
+      new Error('Something went wrong with signup')
+      return
+    }
+    console.log(user)
+    router.push('/account')
+  } catch (error) {
+    console.log(error)
+  }
 }
-
-// async function signInWithEmail(email, password) {
-//         const { data, error } = await client.auth.signUp({
-//             email: email,
-//             password: password,
-//         })
-//     }
-
 </script>
 <template>
   <div
@@ -99,10 +85,10 @@ const handleSubmit = async () => {
         >Don't have an account?
       </span>
 
-      <a
-        href="#"
+      <NuxtLink
+        to="/account/register"
         class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"
-        >Register</a
+        >Register</NuxtLink
       >
     </div>
   </div>

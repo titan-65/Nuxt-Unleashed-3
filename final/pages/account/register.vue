@@ -25,7 +25,7 @@ const handleSubmit = async () => {
             console.log(error)
         }
 
-    router.push('/')
+    router.push('/login')
 
 
 }
@@ -37,7 +37,7 @@ const handleSubmit = async () => {
 //         })
 //     }
 definePageMeta({
-    middleware: ['auth']
+    middleware: []
 })
 </script>
 <template>
@@ -45,14 +45,14 @@ definePageMeta({
     class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
   >
     <div class="px-6 py-4">
-      <h2 class="text-3xl font-bold text-center text-gray-700 dark:text-white">Brand</h2>
+      <h2 class="text-3xl font-bold text-center text-gray-700 dark:text-white">Nuxtin</h2>
 
       <h3 class="mt-1 text-xl font-medium text-center text-gray-600 dark:text-gray-200">
-        Welcome Back
+        Welcome Please SignUp and Have some Coffee!
       </h3>
 
       <p class="mt-1 text-center text-gray-500 dark:text-gray-400">
-        Login or create account
+        Create Account
       </p>
 
       <form @submit.prevent="handleSubmit">
@@ -77,15 +77,12 @@ definePageMeta({
         </div>
 
         <div class="flex items-center justify-between mt-4">
-          <a href="#" class="text-sm text-gray-600 dark:text-gray-200 hover:text-gray-500"
-            >Forget Password?</a
-          >
 
           <button
             class="px-4 py-2 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded hover:bg-gray-600 focus:outline-none"
             type="submit"
           >
-            Login
+            Signup
           </button>
         </div>
       </form>
@@ -95,13 +92,15 @@ definePageMeta({
       class="flex items-center justify-center py-4 text-center bg-gray-50 dark:bg-gray-700"
     >
       <span class="text-sm text-gray-600 dark:text-gray-200"
-        >Don't have an account?
+        >Already have an account?
       </span>
 
-      <a
-        href="#"
+      <NuxtLink
+        to="/account/login"
         class="mx-2 text-sm font-bold text-blue-500 dark:text-blue-400 hover:underline"
-        >Register</a
+        >
+        Login
+      </NuxtLink
       >
     </div>
   </div>

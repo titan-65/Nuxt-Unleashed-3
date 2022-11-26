@@ -1,3 +1,13 @@
+<script setup>
+
+
+const user = useSupabaseUser()
+
+const handleLogoutSubmit = () => {
+
+}
+
+</script>
 <template>
 	<footer class="flex justify-center px-4 text-gray-800 bg-white dark:text-white dark:bg-gray-900">
     <div class="container py-6">
@@ -19,6 +29,14 @@
         <div class="flex flex-col items-center justify-between mt-6 md:flex-row">
             <div>
                 <a href="#" class="text-xl font-bold text-gray-800 transition-colors duration-300 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">Nuxtin</a>
+            </div>
+            <div class="flex">
+                <div v-if="user">
+                    <p>{{user.email}}</p>
+                    <button  class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" @click="client.auth.signOut()">
+                        Logout
+                    </button>
+                </div>
             </div>
 
             <div class="flex mt-4 md:m-0">

@@ -43,14 +43,14 @@ export const useUserStore = defineStore('user', () => {
 
     function addNuxtinUser(user) {
         if (!user) {
-            return 
+            return new Error('No user') 
         }
 
         nuxtinUser.value = user
 
     }
 
-    function addSession({currentSession, cookieOptions}) {
+    function addSession(currentSession, cookieOptions) {
         sessionTracking.value = currentSession
         cookiesOptions.value = cookieOptions
     }

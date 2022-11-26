@@ -1,5 +1,7 @@
-<script setup >
-  const isOpen = ref(false)
+<script setup lang="tsx">
+const isOpen = ref(false)
+const user = useSupabaseUser()
+
 </script>
 <template>
     <div>
@@ -74,12 +76,29 @@
             </button>
           </div>
 
-          <div class="flex justify-center md:block">
-            <button
+          <div class="flex justify-center md:block" v-if="!user">
+            <div>
+              <button
               class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
             >
-              Signin
+              <NuxtLink to="/account/register">
+                Signin
+              </NuxtLink>
+              
             </button>
+            </div>
+          </div>
+          <div class="flex justify-center md:block" v-else>
+            <div>
+              <button
+              class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+            >
+            <NuxtLink to="/account">
+              Account
+            </NuxtLink>
+        
+            </button>
+            </div>
           </div>
         </div>
       </div>

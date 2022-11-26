@@ -13,6 +13,8 @@ console.log(route.path)
 
 const { api, currentSession, currentUser } = client.auth
 
+const { cookieOptions } = api
+
 const { location, fetchLocation, errorString, checkLocation, getLocation } = useLocation()
 const { beverages, getBeverages, frozenDrinks, teaMenuItems, icedCoffeeItems } = useMenuStore()
 const { calculatePoints, earnedRewardPoint } = usePointStore()
@@ -20,7 +22,7 @@ const { calculatePoints, earnedRewardPoint } = usePointStore()
 const { trackUser, nuxtinUser, cookiesOptions, sessionTracking, getTrackUser, addNuxtinUser, addSession, addTrackUser } = useUserStore()
 
 const user = useSupabaseUser() 
-console.log(user)
+console.log("USER", user.value)
 
 // const { data: todos } = await useFetch('https://jsonplaceholder.typicode.com/todos')
 // console.log(todos)
@@ -47,7 +49,7 @@ getLocation()
 
 onMounted(() => {
   calculatePoints()
-  addSession(currentSession)
+  addSession(currentSession, cookieOptions)
   addNuxtinUser(currentUser)
   addNuxtinUser(route.path)
  })
