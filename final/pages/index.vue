@@ -7,6 +7,13 @@ definePageMeta({
 <template>
   <div>
     <MainRibbon />
+    <div class="w-full bg-center bg-cover h-screen" style="background-image: url('https://images.unsplash.com/photo-1650846852086-a2a172d34dc5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2784&q=80');">
+      <div class="flex items-center justify-center w-full h-full">
+        <div class="text-center">
+          <h1 class="text-3xl font-semibold text-white lg:text-4xl">NUXTKIN’ REWARD</h1>
+        </div>
+      </div>
+    </div>
     <section>
       <div class="flex justify-between items-center">
         <div class="item">

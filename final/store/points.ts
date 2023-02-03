@@ -17,9 +17,9 @@ export const usePointStore = defineStore('points', () => {
     /* -------------------------------------------------------------------------- */
 
     const getRewardPoints = computed(() => {
-        return rewardPoints.value
+        return earnedRewardPoint.value
     })
-    const getPoints = computed(() => rewardPoints.value)
+    const getPoints = computed(() => earnedRewardPoint.value)
     const getVistPoints = computed(() => visitPoints.value)
     const getRewards = computed(() => {
         return nuxtinReward
