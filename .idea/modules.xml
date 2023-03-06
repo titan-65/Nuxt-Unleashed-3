@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Nuxt3-Hands-On.iml" filepath="$PROJECT_DIR$/.idea/Nuxt3-Hands-On.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../coffee-lovers-project/coffee-client-typescript/.idea/coffee-client-typescript.iml" filepath="$PROJECT_DIR$/../../coffee-lovers-project/coffee-client-typescript/.idea/coffee-client-typescript.iml" />
     </modules>
   </component>
 </project>

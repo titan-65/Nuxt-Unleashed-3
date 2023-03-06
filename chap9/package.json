@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.2.2",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/ui": "^0.28.5",
+    "@vue/test-utils": "^2.3.0",
+    "nuxt": "^3.2.2",
+    "vitest": "^0.28.5"
+  },
+  "dependencies": {
+    "@picocss/pico": "^1.5.7",
+    "node-sass": "^8.0.0",
+    "sass": "^1.58.3"
+  }
+}
