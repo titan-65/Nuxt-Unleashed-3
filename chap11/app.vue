@@ -1,7 +1,10 @@
+import { useItemsStore } from './store/items.ts'
 <script setup>
-const { data } = await useFetch('/api/fetch-questions')
+import { useItemsStore } from './store/items';
 
-console.log(data)
+const { items, addItemsToCart, fetchDataFromServer } = useItemsStore()
+
+
 </script>
 <template>
   <NuxtLayout>

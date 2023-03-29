@@ -8,15 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^18.14.6",
-    "nuxt": "^3.2.3"
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "nuxt": "^3.2.3",
+    "prisma": "^4.11.0"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.4",
-    "@pinia/nuxt": "^0.4.7",
-    "@vite-pwa/nuxt": "^0.0.7",
-    "fastify": "^4.14.0",
-    "nuxt-icon": "^0.3.3",
-    "pinia": "^2.0.33"
+    "@prisma/client": "^4.11.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0"
   }
 }

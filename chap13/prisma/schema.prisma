@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  email        String    @unique
+  id           Int       @id @default(autoincrement()) @map("_id")
+  firstName    String?
+  lastName     String?
+  password     String
+  profileImage String?
+  username     String    @unique
+  passwordHash String?
+  recipes      Recipe[]
+  comments     Comment[]
+  rank         Rank[]
+}
+
+model Post {
+  title  String
+  id     Int    @id @default(autoincrement()) @map("_id")
+  userId String
+
+  @@index([userId])
+}
+
+model Recipe {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  authorId    Int
+  author      User      @relation(fields: [authorId], references: [id])
+  comments    Comment[]
+  ranks       Rank[]
+
+  @@index([authorId])
+}
+
+model Comment {
+  id       Int    @id @default(autoincrement())
+  content  String
+  recipeId Int
+  authorId Int
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  author   User   @relation(fields: [authorId], references: [id])
+
+  @@index([authorId])
+  @@index([recipeId])
+}
+
+model Rank {
+  id       Int    @id @default(autoincrement())
+  rank     Int
+  recipeId Int
+  userId   Int
+  recipe   Recipe @relation(fields: [recipeId], references: [id])
+  user     User   @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([recipeId])
+}

@@ -5,12 +5,5 @@ export default defineNuxtConfig({
         '@vite-pwa/nuxt',
         '@nuxtjs/tailwindcss',
         'nuxt-icon'
-    ],
-    runtimeConfig: {
-        accessToken: "",
-        apiKey: "",
-        public: {
-            apiBaseUrl: ""
-        }
-    }
+    ]
 })
