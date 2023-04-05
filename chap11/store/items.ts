@@ -4,7 +4,8 @@ import { IItems } from "~/types";
 export const useItemsStore = defineStore('items', () => {
     // State
 
-    const items: Ref<IItems[]> = ref([])
+    // @ts-ignore
+    let items: Ref<IItems[]> = ref(null)
     const category: Ref<string> = ref('')
     const status: Ref<boolean> = ref(false)
     const description: Ref<string> = ref('')
@@ -36,23 +37,24 @@ export const useItemsStore = defineStore('items', () => {
 
     // Actions
     function addItemsToCart(itemsA: IItems): void {
-        const { category, status, description, cost, progress } = itemsA
+        const { category, category_tag, status, description, description_head, cost, progress } = itemsA
         const newCartItems: IItems = {
             category,
+            category_tag,
             status,
             description,
+            description_head,
             cost,
             progress
         }
        items.value.push(newCartItems)
     }
     async function fetchDataFromServer() {
-        const response = await $fetch("https://jsonplaceholder.typicode.com/todos", {
+        return await $fetch("http://localhost:3004/items", {
             method: "GET"
         });
-        const data = await response.json();
-        items.value = data
-        console.log(data)
+        // @ts-ignore
+
     }
 
     function setCurrentPage(page) {

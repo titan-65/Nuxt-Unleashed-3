@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "category": "Office Supplies",
+      "status": "Pending",
+      "description": "Order new toner cartridges for the printer",
+      "cost": 45.99,    "progress": 25  },
+    {    "category": "Marketing",    "status": "In Progress",    "description": "Create social media ad campaign for new product launch",    "cost": 3500.0,    "progress": 75  },
+    {    "category": "Software Development",    "status": "Complete",    "description": "Build and deploy mobile app for iOS and Android",    "cost": 75000.0,    "progress": 100  },  {    "category": "Human Resources",    "status": "Cancelled",    "description": "Organize company-wide training event",    "cost": 12000.0,    "progress": 0  }
+
+  ]
+}
