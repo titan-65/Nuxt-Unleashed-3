@@ -3,11 +3,10 @@ import { useItemsStore } from '~/store/items';
 
 const { items, addItemsToCart, fetchDataFromServer } = useItemsStore()
 
-console.log("ITEMS: ",items)
 
 </script>
 <template>
-  <div>
+  <div class="h-screen w-screen">
     <MainHeroSection />
     <Form />
   </div>

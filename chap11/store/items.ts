@@ -24,6 +24,7 @@ export const useItemsStore = defineStore('items', () => {
     const getDescription = computed(() => description.value)
     const getCost = computed(() => cost.value)
     const getProgress = computed(() => progress.value)
+    const getItemsPerPage = computed(() => itemsPerPage.value)
 
     const getCurrentPage = computed(() => {
         const startIndex = (currentPage.value - 1) * itemsPerPage.value
@@ -49,6 +50,39 @@ export const useItemsStore = defineStore('items', () => {
         }
        items.value.push(newCartItems)
     }
+
+    function removeItemsFromCart(index: number): void {
+        items.value.splice(index, 1)
+
+    }
+
+    function editItemsFromCart(index: number, itemsA: IItems): void {
+        const { category, category_tag, status, description, description_head, cost, progress } = itemsA
+        const newCartItems: IItems = {
+            category,
+            category_tag,
+            status,
+            description,
+            description_head,
+            cost,
+            progress
+        }
+        items.value.splice(index, 1, newCartItems)
+    }
+
+    function clearCart(): void {
+        items.value = []
+        console.log(items.value)
+    }
+
+    function setItems(itemsA: IItems[]): void {
+        items.value = itemsA
+    }
+
+    function setCategory(categoryA: string): void {
+        category.value = categoryA
+    }
+
     async function fetchDataFromServer() {
         return await $fetch("http://localhost:3004/items", {
             method: "GET"
@@ -86,6 +120,9 @@ export const useItemsStore = defineStore('items', () => {
         fetchDataFromServer,
         setCurrentPage,
         setItemsPerPage,
+        removeItemsFromCart,
+        editItemsFromCart,
+        clearCart,
 
     }
 })

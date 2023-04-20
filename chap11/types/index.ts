@@ -1,4 +1,5 @@
 export interface IItems {
+    id: number;
     category: string;
     category_tag: string;
     status: string;

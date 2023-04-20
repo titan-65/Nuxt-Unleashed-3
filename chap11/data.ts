@@ -2,6 +2,7 @@ import { IItems } from "~/types";
 
 export const shoppingItems: IItems[] = [
     {
+        id: 1,
         category: 'Clothing',
         category_tag: 'New Arrival',
         status: 'In Progress',
@@ -11,6 +12,7 @@ export const shoppingItems: IItems[] = [
         progress: 50,
     },
     {
+        id: 2,
         category: 'Electronics',
         category_tag: 'Best Seller',
         status: 'Pending',
@@ -20,6 +22,7 @@ export const shoppingItems: IItems[] = [
         progress: 25,
     },
     {
+        id: 3,
         category: 'Home Goods',
         category_tag: 'Featured',
         status: 'Complete',
@@ -29,6 +32,7 @@ export const shoppingItems: IItems[] = [
         progress: 100,
     },
     {
+        id: 4,
         category: 'Beauty',
         category_tag: 'New Arrival',
         status: 'In Progress',
