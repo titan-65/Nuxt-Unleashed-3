@@ -1,0 +1,19 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "@vuestic/nuxt": "^1.0.11",
+    "nuxt": "^3.4.2"
+  },
+  "dependencies": {
+    "@vuestic/ag-grid-theme": "^1.1.4"
+  }
+}

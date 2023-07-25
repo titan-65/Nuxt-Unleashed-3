@@ -1,7 +1,8 @@
+<script setup lang="ts">
+definePageMeta({
+  middleware: "auth",
+});
+</script>
 <template>
-  <div>
-    <section>
-      <h1>Home</h1>
-    </section>
-  </div>
+  <div>Home</div>
 </template>
