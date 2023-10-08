@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { authenticate } from "~/utils/auth/authHelper";
+
 const router = useRouter();
 
 const email = ref("");
@@ -8,36 +10,23 @@ const loading = ref(false);
 
 const loginHandler = async () => {
   loading.value = true;
-  // error.value = "";
-  // setTimeout(() => {
-  //   loading.value = false;
-  //   error.value = "Invalid email or password";
-  // }, 2000);
 
-  const { data, error } = await useFetch("/api/auth/signin", {
+  const { data: user, error } = await useFetch("/api/auth/signin", {
     method: "POST",
     body: { email: email.value, password: password.value },
   });
+  // console.log(user.value.token);
 
-  console.log(data);
-
-  if (data) {
-    await router.push("/");
+  if (user) {
+    authenticate(user.value.token, () => {
+      router.push("/");
+    });
   } else {
     errorMessage.value = error;
     loading.value = false;
     console.log(error);
     console.log(errorMessage.value);
   }
-
-  // if (error) {
-  //   errorMessage.value = error;
-  //   loading.value = false;
-  //   console.log(error);
-  //   console.log(errorMessage.value);
-  // } else {
-  //   await router.push("/");
-  // }
 };
 definePageMeta({
   layout: "account",

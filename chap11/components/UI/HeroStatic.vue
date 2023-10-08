@@ -1,16 +1,24 @@
 <script setup lang="ts">
 import { useItemsStore } from "~/store/items";
 
-const { items, clearCart } = useItemsStore();
+const store = useItemsStore();
+let lengthItem: Ref<number> = ref(0);
+onMounted(async () => {
+  await store.fetchDataFromServer();
+  // store.items = data;
+  lengthItem = store.items.length;
+  console.log(store.getItems);
+  console.log(store.items);
+});
 </script>
 <template>
   <section class="flex items-center flex-1">
     <div class="flex flex-col w-full">
       <h1 class="text-5xl font-extrabold text-center lg:text-7xl 2xl:text-8xl">
         <span
-          class="text-transparent bg-gradient-to-br bg-clip-text from-teal-500 via-indigo-500 to-sky-500 dark:from-teal-200 dark:via-indigo-300 dark:to-sky-500"
+          class="text-transparent bg-gradient-to-br bg-clip-text from-green-800 via-white to-green-400 dark:from-green-400 dark:via-green-700 dark:to-blue-600"
         >
-          Personal
+          Nuxt 3
         </span>
 
         <span
@@ -36,7 +44,7 @@ const { items, clearCart } = useItemsStore();
         class="flex flex-col mt-8 space-y-3 sm:-mx-2 sm:flex-row sm:justify-center sm:space-y-0"
       >
         <button
-          @click="clearCart"
+          @click="store.clearCart"
           class="px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:bg-blue-600 focus:outline-none sm:mx-2"
         >
           Clear
@@ -46,7 +54,7 @@ const { items, clearCart } = useItemsStore();
       <div class="flex flex-row pt-10">
         <span
           class="inline-block w-6 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1 mx-auto"
-          >{{ items.length }}</span
+          >{{ lengthItem }}</span
         >
       </div>
     </div>

@@ -13,7 +13,7 @@
         class="inline-flex items-center md:ml-5 lg:mt-0 mt-6 space-x-6 lg:w-2/5 lg:justify-end lg:ml-0"
       >
         <NuxtLink
-          to="/account/signin"
+          to="/account/profile"
           class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-gray-900 border border-transparent shadow-sm rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
           >Book Up</NuxtLink
         >

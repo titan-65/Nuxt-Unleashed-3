@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { useItemsStore } from "~/store/items";
 
-const { getItems } = useItemsStore();
+const store = useItemsStore();
+onMounted(async () => {
+  await store.fetchDataFromServer();
+  // store.items = data;
+  console.log(store.items);
+});
 </script>
 <template>
-  <tr v-for="item in getItems" :key="item.id">
+  <tr v-for="item in store.getItems" :key="item.id">
     <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
       <div>
         <h2 class="font-medium text-gray-800 dark:text-white">

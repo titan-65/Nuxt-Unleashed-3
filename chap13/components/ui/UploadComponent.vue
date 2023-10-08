@@ -1,18 +1,26 @@
 <script setup lang="ts">
 import { useFileStore } from "~/store/index";
+import {createRecipe} from "~/utils/recipe/createRecipe";
 
+const route = useRoute();
 const { title, description, file, previewUrl, isValid } = useFileStore();
 
 const filePicker = ref(null);
 
+const { jwt } = route.params
 const handleFileUpload = (event) => {
   console.log(event.target.files[0]);
   file.value = event.target.files[0];
 }
 
-// import multer from "multer";
+// const recipePost = () => {
+//   let recipeData = new FormData()
+//   recipeData.append('title', title.value)
+//   recipeData.append('description', description.value)
+//   const data = createRecipe({ userId: jwt.user._id}, {token: jwt.token}, recipeData)
+//   console.log(data)
+// }
 
-// Multer implemenatation
 </script>
 <template>
   <div>

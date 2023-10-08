@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  title: "Middleware, Plugins and Modules",
+  middleware: ["user"],
+});
+</script>
 <template>
   <div>
     <div>

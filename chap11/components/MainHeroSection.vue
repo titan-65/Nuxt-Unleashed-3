@@ -1,11 +1,17 @@
-<script setup lang="ts">
-import { IItems } from "~/types";
-import { useItemsStore } from "~/store/items";
+<!--<script setup lang="ts">-->
+<!--import { IItems } from "~/types";-->
+<!--import { useItemsStore } from "~/store/items";-->
 
-let showModal: Ref<boolean> = ref(false);
-const { items, getItems, addItemsToCart, fetchDataFromServer, clearCart } =
-  useItemsStore();
-</script>
+<!--let showModal: Ref<boolean> = ref(false);-->
+<!--const { items, getItems, addItemsToCart, fetchDataFromServer, clearCart } =-->
+<!--  useItemsStore();-->
+
+<!--onMounted(async () => {-->
+<!--  await fetchDataFromServer();-->
+<!--  // store.items = data;-->
+<!--  console.log(items);-->
+<!--});-->
+<!--</script>-->
 <template>
   <div>
     <section class="w-full h-full bg-white dark:bg-gray-900">
@@ -34,17 +40,17 @@ const { items, getItems, addItemsToCart, fetchDataFromServer, clearCart } =
       </div>
     </section>
 
-    <NotificationModal :modalActive="showModal">
-      <div class="fixed z-10 inset-0 overflow-y-auto">
-        <div class="flex items-center justify-center min-h-screen">
-          <div class="bg-white rounded-lg p-8">
-            <h2 class="text-2xl mb-4">Modal Title</h2>
-            <p>Modal Content</p>
+    <!--    <NotificationModal :modalActive="showModal">-->
+    <!--      <div class="fixed z-10 inset-0 overflow-y-auto">-->
+    <!--        <div class="flex items-center justify-center min-h-screen">-->
+    <!--          <div class="bg-white rounded-lg p-8">-->
+    <!--            <h2 class="text-2xl mb-4">Modal Title</h2>-->
+    <!--            <p>Modal Content</p>-->
 
-            <button @click="showModal = false">Close Modal</button>
-          </div>
-        </div>
-      </div>
-    </NotificationModal>
+    <!--            <button @click="showModal = false">Close Modal</button>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </NotificationModal>-->
   </div>
 </template>

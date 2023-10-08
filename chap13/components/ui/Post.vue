@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useFileStore } from "~/store/index";
+import {createRecipe} from "~/utils/recipe/createRecipe";
 
 const { file, previewUrl, isValid } = useFileStore();
 
@@ -8,30 +9,13 @@ const description = ref('');
 const filePicker = ref(null);
 
 const submitHandler = async () => {
-  const formData = {
-    title: title.value,
-    description: description.value,
-    file: file.value,
-  }
-  const config = {
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    }
-  }
-  // const postData = new FormData()
-  // postData.append('title', title.value)
-  // postData.append('description', description.value)
-  // postData.append('file', file.value)
 
-  // console.log(postData)
+  let recipeData = new FormData()
+  recipeData.append('title', title.value)
+  recipeData.append('description', description.value)
+  const data = createRecipe({ userId: jwt.user._id}, {token: jwt.token}, recipeData)
+  console.log(data)
 
-  const { data } = await useFetch('/api/recipes', {
-    method: 'POST',
-    body: formData,
-  })
-
-  console.log(data.value)
-  
 }
 
 </script>

@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const { data } = await useFetch('/api/recipes')
+const { data } = await useFetch('/api/recipes', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
+  }
+})
 </script>
 <template>
   <section class="w-full bg-white overflow-y-auto max-h-screen">

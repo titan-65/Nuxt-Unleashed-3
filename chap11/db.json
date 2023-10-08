@@ -6,7 +6,57 @@
       "description": "Order new toner cartridges for the printer",
       "cost": 45.99,    "progress": 25  },
     {    "category": "Marketing",    "status": "In Progress",    "description": "Create social media ad campaign for new product launch",    "cost": 3500.0,    "progress": 75  },
-    {    "category": "Software Development",    "status": "Complete",    "description": "Build and deploy mobile app for iOS and Android",    "cost": 75000.0,    "progress": 100  },  {    "category": "Human Resources",    "status": "Cancelled",    "description": "Organize company-wide training event",    "cost": 12000.0,    "progress": 0  }
+    {    "category": "Software Development",    "status": "Complete",    "description": "Build and deploy mobile app for iOS and Android",    "cost": 75000.0,    "progress": 100  },  {    "category": "Human Resources",    "status": "Cancelled",    "description": "Organize company-wide training event",    "cost": 12000.0,    "progress": 0  },
+    {
+        "id": 1,
+        "category": "Electronics",
+        "category_tag": "electronics",
+        "status": "Available",
+        "description_head": "Smartphone",
+        "description": "Latest 5G smartphone with high-resolution camera and long-lasting battery.",
+        "cost": 999.99,
+        "progress": 100
+    },
+    {
+        "id": 2,
+        "category": "Clothing",
+        "category_tag": "clothing",
+        "status": "Sold Out",
+        "description_head": "Leather Jacket",
+        "description": "Stylish black leather jacket for winter season.",
+        "cost": 249.99,
+        "progress": 80
+    },
+    {
+        "id": 3,
+        "category": "Books",
+        "category_tag": "books",
+        "status": "Available",
+        "description_head": "Science Fiction Novel",
+        "description": "A thrilling science fiction novel set in a post-apocalyptic world.",
+        "cost": 14.99,
+        "progress": 50
+    },
+    {
+        "id": 4,
+        "category": "Sports",
+        "category_tag": "sports",
+        "status": "Available",
+        "description_head": "Tennis Racket",
+        "description": "Lightweight tennis racket suitable for beginners and professionals.",
+        "cost": 59.99,
+        "progress": 75
+    },
+    {
+        "id": 5,
+        "category": "Home and Kitchen",
+        "category_tag": "home_kitchen",
+        "status": "Low Stock",
+        "description_head": "Blender",
+        "description": "Powerful blender perfect for making smoothies and other beverages.",
+        "cost": 49.99,
+        "progress": 90
+    }
+]
 
-  ]
 }

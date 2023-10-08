@@ -9,17 +9,30 @@ datasource db {
 }
 
 model User {
-  email        String    @unique
-  id           Int       @id @default(autoincrement()) @map("_id")
+  email        String        @unique
+  id           Int           @id @default(autoincrement()) @map("_id")
   firstName    String?
   lastName     String?
   password     String
   profileImage String?
-  username     String    @unique
+  username     String        @unique
   passwordHash String?
   recipes      Recipe[]
   comments     Comment[]
   rank         Rank[]
+  following    UserFollows[] @relation(name: "FollowingRelation")
+  followedBy   UserFollows[] @relation(name: "FollowerRelation")
+}
+
+model UserFollows {
+  followingId Int
+  followerId  Int
+  following   User @relation(name: "FollowingRelation", fields: [followingId], references: [id])
+  follower    User @relation(name: "FollowerRelation", fields: [followerId], references: [id])
+
+  @@id([followingId, followerId])
+  @@index([followingId])
+  @@index([followerId])
 }
 
 model Post {
@@ -34,6 +47,11 @@ model Recipe {
   id          Int       @id @default(autoincrement())
   title       String
   description String
+  ingredients String
+  servingSize Int?
+  prepTime    Int?
+  cookTime    Int?
+  totalTime   Int?
   authorId    Int
   author      User      @relation(fields: [authorId], references: [id])
   comments    Comment[]
@@ -41,6 +59,17 @@ model Recipe {
 
   @@index([authorId])
 }
+
+// model Ingredient {
+//   id       Int    @id @default(autoincrement())
+//   name     String
+//   quantity Int
+//   unit     String
+//   recipeId Int
+//   recipe   Recipe @relation(fields: [recipeId], references: [id])
+//
+//   @@index([recipeId])
+// }
 
 model Comment {
   id       Int    @id @default(autoincrement())

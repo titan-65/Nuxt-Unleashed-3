@@ -7,14 +7,18 @@ import {requiredSignin} from "~/helpers/authHandler";
 export default defineEventHandler(async (event: H3Event) => {
     try {
 
-        const { title, description }= await readBody(event)
+        const { title, description, ingredients, servingSize, prepTime, cookTime, totalTime }= await readBody(event)
         //const user = await readUserById(event)
-        const user = await requiredSignin(event)
+        const authorId = await requiredSignin(event)
         // @ts-ignore
-        const { id: authorId } = user
         const recipeDto = {
             title,
             description,
+            ingredients,
+            servingSize,
+            prepTime,
+            cookTime,
+            totalTime,
             authorId
         }
 

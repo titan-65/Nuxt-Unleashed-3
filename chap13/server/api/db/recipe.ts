@@ -4,12 +4,17 @@ import {Recipe} from "../../types/recipe.types";
 
 export const createRecipe = async (recipeDto: Partial<Recipe>) => {
     try {
-        const { title, description, authorId } = recipeDto
+        const { title, description, ingredients, servingSize, prepTime, cookTime, totalTime, authorId } = recipeDto
         return await prisma.recipe.create({
             // @ts-ignore
             data: {
                 title,
                 description,
+                ingredients,
+                servingSize,
+                prepTime,
+                cookTime,
+                totalTime,
                 authorId
             }
         })

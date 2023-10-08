@@ -1,18 +1,17 @@
-import { useItemsStore } from './store/items.ts'
 <script setup>
-import {useItemsStore} from '~/store/items';
-import { shoppingItems } from "~/data";
+import { useItemsStore } from "~/store/items";
 
-const store = useItemsStore()
-store.items = shoppingItems
+const store = useItemsStore();
 
 onMounted(async () => {
-  const data = await store.fetchDataFromServer()
-    console.log(data)
-})
+  await store.fetchDataFromServer();
+  // store.items = data;
+  console.log(store.getItems);
+  console.log(store.items);
+});
 </script>
 <template>
   <NuxtLayout>
-    <NuxtPage/>
+    <NuxtPage />
   </NuxtLayout>
 </template>
